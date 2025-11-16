@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SWAPPED MYTH</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <style>
+        .navbar {
+            min-height: 40px; /* Make navbar thinner */
+            padding-top: 0.1rem;
+            padding-bottom: 0.2rem;
+        }
+        
+        .nav-link {
+            color: #888 !important; /* Gray text */
+            text-shadow: 2px 2px 0 #000; /* Black drop shadow */
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #ccc !important; /* Lighter gray on hover */
+        }
+        
+        /* Custom hamburger icon styling */
+        .navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            width: 24px;
+            height: 18px;
+            justify-content: space-between;
+        }
+        
+        .hamburger-line {
+            height: 3px;
+            width: 100%;
+            background-color: #888;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        /* FAQ styles */
+        .faq-title {
+            font-size: 3rem;
+            text-align: center;
+            font-weight: 800;
+            margin: 2.5rem 0 1rem 0;
+            padding: 0.75rem 1rem;
+            position: relative;
+            color: yellow;
+        }
+        .faq-title::before,
+        .faq-title::after {
+            content: "";
+            display: block;
+            height: 8px; /* rectangular line thickness */
+            background: #ffffff; /* line color */
+            width: 100%;
+            max-width: 900px; /* line max width */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .faq-title::before { margin-bottom: 12px; }
+        .faq-title::after { margin-top: 12px; }
+
+        .faq { margin-top: 2rem; margin-bottom: 3rem; }
+        .faq-item { margin: 1.25rem 0; }
+        .faq-question::before { content: "Q: "; font-weight: 700; color: #ff0000; }
+        .faq-answer::before { content: "A: "; font-weight: 700; color: #0000ff; }
+            .faq-question { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+            .faq-answer { font-size: 1rem; color: #fff; margin-bottom: 0.25rem; }
+        /* Accordion specific styling to center content */
+        .faq .accordion { max-width: 900px; margin-left: auto; margin-right: auto; color }
+        .faq .accordion-button { justify-content: center; text-align: center; }
+        .faq .accordion-button::after { margin-left: 0; }
+            .faq .accordion-body { text-align: center; }
+
+            /* Make accordion match contact form colors */
+            .faq .accordion-item {
+                background: transparent;
+                border: 1px solid #666;
+                border-radius: 8px;
+                overflow: hidden;
+                margin-bottom: 0.75rem;
+            }
+            .faq .accordion-button {
+                background: rgba(255,255,255,0.03);
+                color: #eee;
+                border: none;
+                padding: 1rem 1.25rem;
+                box-shadow: none;
+            }
+                .faq .accordion-button:not(.collapsed) {
+                    background: rgba(255,255,255,0.05);
+                    color: #fff;
+                }
+            .faq .accordion-button:focus {
+                box-shadow: none;
+            }
+            .faq .accordion-button::after { filter: invert(1) brightness(2); }
+            .faq .accordion-body {
+                background: rgba(255,255,255,0.01);
+                color: #ccc;
+                padding: 1rem 1.25rem 1.5rem 1.25rem;
+            }
+                .faq .accordion-body {
+                    color: #fff;
+                }
+        @media (max-width: 576px) {
+            .nav-item.px-5 { padding-left: 1rem !important; padding-right: 1rem !important; }
+            .faq-title { font-size: 1.8rem; }
+        }
+        /* Contact form styles */
+        .contact-title { font-size: 2rem; text-align: center; color: #eee; font-weight: 800; margin-top: 2.5rem; }
+        .contact-form { max-width: 700px; margin: 1.25rem auto 3rem auto; }
+        .contact-form .form-control, .contact-form .form-select { background: rgba(255,255,255,0.03); border: 1px solid #666; color: #eee; }
+        .contact-form .form-control:focus, .contact-form .form-select:focus { box-shadow: none; border-color: #999; }
+        .contact-form .btn-primary { background: #6c757d; border-color: #6c757d; }
+        .contact-note { color: #bbb; font-size: .95rem; text-align: center; margin-top: .5rem; }
+    </style>
+</head>
+<body>
+    <div class="site">
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger-icon">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </div>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMain">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-5"><a class="nav-link" href="index.html" style="font-size: 2.5em;">HOME</a></li>
+                        <li class="nav-item px-5"><a class="nav-link" href="about.html" style="font-size: 2.5em;">ABOUT</a></li>
+                        <li class="nav-item px-5"><a class="nav-link" href="faq.html" style="font-size: 2.5em;">FAQ / CONTACT</a></li>
+                        <li class="nav-item px-5"><a class="nav-link" href="download.html" style="font-size: 2.5em;">DOWNLOAD</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex-grow-1">
+            <div class="container">
+                <section class="hero">
+
+                    <img src="./assets/img/logo.webp" alt="Swapped Myth Logo" class="logo mb-4" />
+                </section>
+
+                
+                <!-- FAQ section -->
+                <section class="faq">
+                    <div class="faq-title">Frequently Asked Questions</div>
+                    <p class="faq-title" style="font-size: 22px; color:white">last updated Nov 16 2025</p>
+                    <!--
+                        Accordion-based FAQ. To add an item:
+                        1) Duplicate a `.accordion-item` below.
+                        2) Update the heading id, collapse id and the button's data-bs-target to match.
+                        Keep each question as an H3 (`.faq-question`) and each answer as a <p> (`.faq-answer`).
+                    -->
+                    <br>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <h3 class="faq-question mb-0">What platforms will this fan-game be playable on?</h3>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="faq-answer">We intend to release this project on Windows, macOS, Linux and Android.<br>If your smart toaster runs on Android and has a touch screen, you can play it there too!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <h3 class="faq-question mb-0">Is there going to be controller support?</h3>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="faq-answer">Controllers are supported on PC and will be supported on mobile as well.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+                                    <h3 class="faq-question mb-0">What are the release plans for this fan-game?</h3>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="faq-answer">This is being handled through major content updates to the demo, but we understand this can be seen as somewhat vague, so read the below text for more information!</p>
+                                    <h1>DEMO 1.0</h1>
+                                    <p style="font-size: 20px;"><span style="font-weight: bold; font-size: 20px;">Lucent Caverns</span> (Ruins)</p>
+                                    <h1>DEMO 2.0</h1>
+                                    <p style="font-size: 20px;"><span style="font-weight: bold; font-size: 20px;">Sollis Vallis</span> (Snowdin)</p>
+                                    <h1>DEMO 3.0</h1>
+                                    <p style="font-size: 20px;"><span style="font-weight: bold; font-size: 20px;">Ceres Gorge</span> (Waterfall)</p>
+                                    <h1>DEMO 4.0</h1>
+                                    <p style="font-size: 20px;"><span style="font-weight: bold; font-size: 20px;">Boreal Plateau & THE CRUX</span> (Hotland & The CORE)</p>
+                                    <h1>Full Game</h1>
+                                    <p style="font-size: 20px;"><span style="font-weight: bold; font-size: 20px;">The Capital & CASTLE</span> (New Home)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                    <h3 class="faq-question mb-0">Is this project affiliated with Toby Fox?</h3>
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="faq-answer">No. SWAPPED MYTH is a fan project and is not affiliated with Toby Fox or his studios.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+                <br>
+
+                 <!-- Contact form -->
+                <section class="contact">
+                    <div class="container">
+                        <div class="contact-title">Contact Us</div>
+
+                        <!--
+                            Contact form: to change subject options, update the <select> options below.
+                            Set the `action` attribute on the <form> to your server endpoint to receive submissions.
+                        -->
+
+                        <form class="contact-form" action="#" method="post">
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="contactName" name="name" placeholder="Your name" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="contactEmail" name="email" placeholder="you@example.com" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">Subject</label>
+                                <select id="contactSubject" name="subject" class="form-select" required>
+                                    <option value="">Choose a subject...</option>
+                                    <option value="support">Support</option>
+                                    <option value="inquiry">Inquiry</option>
+                                    <option value="applications">Team Applications</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea id="contactMessage" name="message" rows="6" class="form-control" placeholder="Tell us what's up..." required></textarea>
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                            </div>
+
+                            <div class="contact-note">We will not share your email address. Responses typically arrive as soon as possible!</div>
+                        </form>
+                    </div>
+                </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p style="font-size:32px;">
+<span style="font-weight: bold;">UNDERTALE © 2015 / DELTARUNE © 2018</span> by <span style="font-weight: bold;">Toby Fox</span>, Temmie Chang & Co.<br>SWAPPED MYTH (TM!UNDERSWAP) © Team Mythical 2025<br>(We are not affiliated with Toby Fox.)</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
