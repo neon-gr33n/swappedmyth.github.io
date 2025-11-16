@@ -8,26 +8,83 @@
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Pixel font -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../css/main.css" />
+    <style>
+        .navbar {
+            min-height: 40px; /* Make navbar thinner */
+            padding-top: 0.1rem;
+            padding-bottom: 0.2rem;
+        }
+        
+        .nav-link {
+            color: #888 !important; /* Gray text */
+            text-shadow: 2px 2px 0 #000; /* Black drop shadow */
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #ccc !important; /* Lighter gray on hover */
+        }
+        
+        /* Custom hamburger icon styling */
+        .navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            width: 24px;
+            height: 18px;
+            justify-content: space-between;
+        }
+        
+        .hamburger-line {
+            height: 3px;
+            width: 100%;
+            background-color: #888;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    </style>
 </head>
 <body>
     <div class="site">
 
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
-                    <span style="font-size:10px">MENU</span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger-icon">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </div>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navMain">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item px-5"><a class="nav-link text-white" href="#">About</a></li>
-                        <li class="nav-item px-5"><a class="nav-link text-white" href="#">Soundtrack</a></li>
-                        <li class="nav-item px-5"><a class="nav-link text-white" href="#">FAQ / Contact</a></li>
-                        <li class="nav-item px-5"><a class="nav-link text-white" href="#">Download</a></li>
+                        <li class="nav-item px-5"><a class="nav-link" href="#" style="font-size: 2.5em;">ABOUT</a></li>
+                        <li class="nav-item px-5"><a class="nav-link" href="https://soundcloud.com/swappedmyth" style="font-size: 2.5em;">SOUNDTRACK</a></li>
+                        <li class="nav-item px-5"><a class="nav-link" href="#" style="font-size: 2.5em;">FAQ / CONTACT</a></li>
+                        <li class="nav-item px-5"><a class="nav-link" href="#" style="font-size: 2.5em;">DOWNLOAD</a></li>
                     </ul>
                 </div>
             </div>
@@ -36,12 +93,15 @@
         <main class="flex-grow-1">
             <div class="container">
                 <section class="hero">
-                    <div class="soul" aria-hidden="true"></div>
-                    <h1>UNDERTALE — Tribute</h1>
-                    <p class="lead">A clean, pixel-lean Bootstrap starter inspired by the classic black, red and yellow aesthetic. Use this template to build a responsive retro landing page with pixel fonts, subtle shadows and blocky UI panels.</p>
+
+                    <img src="../assets/img/logo.webp" alt="Swapped Myth Logo" class="logo mb-4" />
+                    <br><br><br>
+                    <p class="lead" style="font-size: 20px;">Swapped Myth (stylized as SWAPPED MYTH) is an Underswap take that aims to focus on expanding the world of Undertale/Deltarune,<br>with ideas both new and old, to enrich its world.<br><br>It is our interpretation/view of the premise of UNDERSWAP an alternate universe of Undertale in which character roles, personalities, or even locationsre swapped, in addition, we are adding original content, introducing new characters, while balancing the tone and creating our own unique identity
+
+                    <br><br>A <span style="font-weight: bold;">DEMO</span> is currently in development and will feature the first area, the <span style="color:yellow">Lucent Caverns</span>!</p>
                     <div style="margin-top:18px">
-                        <a href="#" class="btn-pixel">Play Demo</a>
-                        <a href="#" class="btn btn-outline-light btn-sm ms-2" style="font-family: 'Press Start 2P', monospace; font-size:10px;">Learn More</a>
+                        <a href="#" class="btn-pixel">View our most recent Devlog!</a>
+                        <a href="https://gamejolt.com/games/swappedmyth/857058" class="btn btn-outline-light btn-sm ms-3" style="font-size:28px;">Learn More</a>
                     </div>
                 </section>
 
@@ -49,21 +109,21 @@
                     <div class="col-md-4">
                         <div class="panel">
                             <div class="title">Story</div>
-                            <p style="font-size:11px; color:#d8d8d8;">Short descriptive text about your project's story, atmosphere, or concept. Keep it striking and concise to match the aesthetic.</p>
+                            <p style="font-size:20px; color:#d8d8d8;">Explore a strange, yet familiar world as a young human child, and embark on a journey back to the surface from the mysterious Underground</p>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="panel">
                             <div class="title">Soundtrack</div>
-                            <p style="font-size:11px; color:#d8d8d8;">Introduce characters, NPCs, or relevant personalities with small pixel-art thumbnails or stylized sprites.</p>
+                            <p style="font-size:20px; color:#d8d8d8;">We have a soundtrack, it's available on <span>BANDCAMP</span> and <span>SOUNDCLOUD</span>!</p>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="panel">
                             <div class="title">Download</div>
-                            <p style="font-size:11px; color:#d8d8d8;">Place download links, demos or platform badges here. Keep calls-to-action bold and simple.</p>
+                            <p style="font-size:20px; color:#d8d8d8;">Currently no downloads are available, check back later once our DEMO is released!</p>
                         </div>
                     </div>
                 </div>
@@ -73,7 +133,8 @@
 
         <footer>
             <div class="container">
-                <small>Made with pixel love • This is an original fan-style layout, not an official site.</small>
+                <p style="font-size:32px;">
+<span style="font-weight: bold;">UNDERTALE © 2015 / DELTARUNE © 2018</span> by <span style="font-weight: bold;">Toby Fox</span>, Temmie Chang & Co.<br>SWAPPED MYTH (TM!UNDERSWAP) © Team Mythical 2025<br>(We are not affiliated with Toby Fox.)</p>
             </div>
         </footer>
 
