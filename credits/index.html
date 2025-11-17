@@ -13,7 +13,7 @@
     <link rel="preload" href="../assets/fonts/JF-Dot-Shinonome-14-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
     <link rel="stylesheet" href="../css/main.css" />
-    <title>SWAPPED MYTH | FAQ</title>
+    <title>SWAPPED MYTH | CREDITS</title>
         <!-- central js handles soul icon -->
         
         <style>
@@ -231,6 +231,68 @@
             background-repeat: no-repeat;
             animation: pulse 1s ease-in-out infinite;
         }
+
+/***** CREDITS PAGE — Vertical text list *****/
+
+.credits-title {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: yellow;
+    text-shadow: 2px 2px 0 black;
+}
+
+.credits-position {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: yellow;
+    text-shadow: 2px 2px 0 black;
+}
+
+.credits-title::before,
+.credits-title::after {
+    content: "";
+    display: block;
+    height: 8px;
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    margin: 12px auto;
+}
+
+/* Section dividers (like UNDERTALE+ headings) */
+.credits-section {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-align: center;
+    color: #00ccff;
+    text-shadow: 2px 2px 0 black;
+    letter-spacing: 2px;
+}
+
+/* Credit lines (names) */
+.credit-line {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    line-height: 1.7;
+}
+
+/* Narrow screen adjustments */
+@media (max-width: 576px) {
+    .credits-title { font-size: 2.2rem; }
+    .credits-section { font-size: 1.3rem; }
+    .credit-line { font-size: 1.05rem; }
+}
+
     </style>
 </head>
 <body>
@@ -250,8 +312,8 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item px-5"><a class="nav-link" href="../" style="font-size: 2.5em;">HOME</a></li>
                         <li class="nav-item px-5"><a class="nav-link" href="../about/" style="font-size: 2.5em;">ABOUT</a></li>
-                        <li class="nav-item px-5"><a class="nav-link" href="../credits/" style="font-size: 2.5em;">CREDITS</a></li>
-                        <li class="nav-item px-5"><a class="nav-link active" href="" style="font-size: 2.5em;">FAQ</a></li>
+                        <li class="nav-item px-5"><a class="nav-link active" href="../credits/" style="font-size: 2.5em;">CREDITS</a></li>
+                        <li class="nav-item px-5"><a class="nav-link" href="../faq/" style="font-size: 2.5em;">FAQ</a></li>
                         <li class="nav-item px-5"><a class="nav-link" href="../download/" style="font-size: 2.5em;">DOWNLOAD</a></li>
                     </ul>
                 </div>
@@ -261,86 +323,71 @@
         <main class="flex-grow-1">
             <div class="container">
                 <section class="hero">
-
-                    <img src="../assets/img/logo.webp" alt="Swapped Myth Logo" class="logo mb-4" />
+                     <img src="../assets/img/logo.webp" alt="Swapped Myth Logo" class="logo mb-4" />
                 </section>
+                <section class="credits mt-5 mb-5">
+                <h1 class="credits-title">CREDITS</h1>
 
-                
-                <!-- FAQ section -->
-                <section class="faq">
-                    <div class="faq-title">Frequently Asked Questions</div>
-                    <p class="faq-title" style="font-size: 22px; color:white">last updated Nov 16 2025</p>
-                    <!--
-                        Accordion-based FAQ. To add an item:
-                        1) Duplicate a `.accordion-item` below.
-                        2) Update the heading id, collapse id and the button's data-bs-target to match.
-                        Keep each question as an H3 (`.faq-question`) and each answer as a <p> (`.faq-answer`).
-                    -->
-                    <br>
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    <h3 class="faq-question mb-0">What platforms will this fan-game be playable on?</h3>
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-answer">We intend to release this project on Windows, macOS, Linux and Android.<br>If your smart toaster runs on Android and has a touch screen, you can play it there too!</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="credits-grid container mt-4">
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <h3 class="faq-question mb-0">Is there going to be controller support?</h3>
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-answer">Controllers are supported on PC and will be supported on mobile as well.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
-                                    <h3 class="faq-question mb-0">What are the release plans for this fan-game?</h3>
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-answer">This is being handled through major content updates to the demo, but we understand this can be seen as somewhat vague, so read the below text for more information!</p>
-                                    <h1>DEMO 1.0</h1>
-                                    <p style="font-size: 20px;"><span style="font-weight: bold; font-size: 20px;">Lucent Caverns</span> (Ruins)</p>
-                                    <h1>DEMO 2.0</h1>
-                                    <p style="font-size: 20px;"><span style="font-weight: bold; font-size: 20px;">Sollis Vallis</span> (Snowdin)</p>
-                                    <h1>DEMO 3.0</h1>
-                                    <p style="font-size: 20px;"><span style="font-weight: bold; font-size: 20px;">Ceres Gorge</span> (Waterfall)</p>
-                                    <h1>DEMO 4.0</h1>
-                                    <p style="font-size: 20px;"><span style="font-weight: bold; font-size: 20px;">Boreal Plateau & THE CRUX</span> (Hotland & The CORE)</p>
-                                    <h1>Full Game</h1>
-                                    <p style="font-size: 20px;"><span style="font-weight: bold; font-size: 20px;">The Capital & CASTLE</span> (New Home)</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                                    <h3 class="faq-question mb-0">Is this project affiliated with Toby Fox?</h3>
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <p class="faq-answer">No. SWAPPED MYTH is a fan project and is not affiliated with Toby Fox or his studios.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Credit Block -->
+                    <div class="credit-block">
+                        <h2 class="credits-position">DIRECTED BY</h2>
+                        <p class="credit-line">Neon-Gr33n &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Project Lead, Creative Director)</span></p>
                     </div>
-                </section>
+
+                    <div class="credit-block">
+                        <h2 class="credits-position">ARTWORK BY</h2>
+                        <p class="credit-line">Doctor Ducksy</p>
+                        <p class="credit-line">Maxine <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Concept Art)</span></p>
+                        <p class="credit-line">JustYourAverageGameDev</p>
+                        <p class="credit-line">s_lfur_ica</p>
+                        <p class="credit-line">AARONMEGAGAMER09</p>
+                        <p class="credit-line">Zano <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Former member)</span></p>
+                        <p class="credit-line">Valor52 <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Former member)</span></p>
+                    </div>
+
+                    <div class="credit-block">
+                        <h2 class="credits-position">MUSIC BY</h2>
+                        <p class="credit-line">Soba Noodles</p>
+                        <p class="credit-line">JustYourAverageGameDev</p>
+                        <p class="credit-line">razz</p>
+                        <p class="credit-line">Kaedenn</p>
+                        <p class="credit-line">Cicada Darling</p>
+                        <p class="credit-line">Mirage</p>
+                        <p class="credit-line">MaxVilocity <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Former member)</span></p>
+                    </div>
+
+                    <div class="credit-block">
+                        <h2 class="credits-position">WRITTEN BY</h2>
+                        <p class="credit-line">Alternimo</p>
+                        <p class="credit-line">Neon-Gr33n</p>
+                        <p class="credit-line">JustYourAverageGameDev</p>
+                        <p class="credit-line">Efficient Doom <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Former member)</span></p>
+                        <p class="credit-line">Valor52 <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Former member)</span></p>
+                        <p class="credit-line">aaratnuu-jp <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Japanese translation)</span></p>
+                    </div>
+
+                    
+                    <div class="credit-block">
+                        <h2 class="credits-position">PROGRAMMED BY</h2>
+                        <p class="credit-line">beatle</p>
+                        <p class="credit-line">JustYourAverageGameDev</p>
+                        <p class="credit-line">Neon-Gr33n</p>
+                        <p class="credit-line">!Shock</p>
+                    </div>
+
+                    <div class="credit-block">
+                        <h2 class="credits-position">SPECIAL THANKS + CONTRIBUTORS</h2>
+                        <p class="credit-line">Paledoptera <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Various musical compositions)</span></p>
+                        <p class="credit-line">Soup Taels <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Programming assistance, overworld sprites)</span></p>
+                        <p class="credit-line">Mo Langning <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Programming assistance)</span></p>
+                        <p class="credit-line">FrostyCat <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Programming assistance)</span></p>
+                        <p class="credit-line">__b <span style="color:gray">&nbsp;&nbsp;&nbsp;&nbsp;(Past artwork)</span></p>
+                        
+                </div>
+            </section>
+
             </div>
         </main>
 

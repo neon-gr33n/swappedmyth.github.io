@@ -215,7 +215,7 @@
 
 /* Footer styling: grey text with stretched bg-dotmatrix image */
 footer {
-    border-top: 1px solid #ffffff; /* white separator line */
+    border-top: 8px solid #ffffff; /* white separator line */
     background-color: #2f2f2f; /* base grey */
     color: #000000; /* lighter grey text */
     background-image: url('../assets/img/bg-dotmatrix.png');
