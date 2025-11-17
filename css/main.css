@@ -18,13 +18,13 @@
         }
         @font-face {
             font-family: '8bitoperator JVE';
-            src: url('fonts/8bitoperator-JVE.eot');
+            src: url('../assets/fonts/8bitoperator-JVE.eot');
             src: local('8bitoperator JVE Regular'), local('8bitoperator-JVE'),
-                url('fonts/8bitoperator-JVE.eot?#iefix') format('embedded-opentype'),
-                url('fonts/8bitoperator-JVE.woff2') format('woff2'),
-                url('fonts/8bitoperator-JVE.woff') format('woff'),
-                url('fonts/8bitoperator-JVE.ttf') format('truetype'),
-                url('fonts/8bitoperator-JVE.svg#8bitoperator-JVE') format('svg');
+                url('../assets/fonts/8bitoperator-JVE.eot?#iefix') format('embedded-opentype'),
+                url('../assets/fonts/8bitoperator-JVE.woff2') format('woff2'),
+                url('../assets/fonts/8bitoperator-JVE.woff') format('woff'),
+                url('../assets/fonts/8bitoperator-JVE.ttf') format('truetype'),
+                url('../assets/fonts/8bitoperator-JVE.svg#8bitoperator-JVE') format('svg');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -32,13 +32,13 @@
 
         @font-face {
             font-family: 'JF Dot Shinonome Gothic 14';
-            src: url('fonts/JF-Dot-Shinonome-14-Regular.eot');
+            src: url('../assets/fonts/JF-Dot-Shinonome-14-Regular.eot');
             src: local('JF Dot Shinonome Gothic 14 Regular'), local('JF-Dot-Shinonome-14-Regular'),
-                url('fonts/JF-Dot-Shinonome-14-Regular.eot?#iefix') format('embedded-opentype'),
-                url('fonts/JF-Dot-Shinonome-14-Regular.woff2') format('woff2'),
-                url('fonts/JF-Dot-Shinonome-14-Regular.woff') format('woff'),
-                url('fonts/JF-Dot-Shinonome-14-Regular.ttf') format('truetype'),
-                url('fonts/JF-Dot-Shinonome-14-Regular.svg#JF-Dot-Shinonome-14-Regular') format('svg');
+                url('../assets/fonts/JF-Dot-Shinonome-14-Regular.eot?#iefix') format('embedded-opentype'),
+                url('../assets/fonts/JF-Dot-Shinonome-14-Regular.woff2') format('woff2'),
+                url('../assets/fonts/JF-Dot-Shinonome-14-Regular.woff') format('woff'),
+                url('../assets/fonts/JF-Dot-Shinonome-14-Regular.ttf') format('truetype'),
+                url('../assets/fonts/JF-Dot-Shinonome-14-Regular.svg#JF-Dot-Shinonome-14-Regular') format('svg');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -48,7 +48,7 @@
             height:100%;
             background:var(--bg);
             color:var(--muted);
-            font-family: '8bitoperator JVE';
+            font-family: '8bitoperator JVE', 'JF Dot Shinonome Gothic 14', 'Segoe UI', Roboto, "Helvetica Neue", Arial, system-ui, -apple-system, sans-serif;
             -webkit-font-smoothing: none;
             text-rendering: optimizeLegibility;
         }
