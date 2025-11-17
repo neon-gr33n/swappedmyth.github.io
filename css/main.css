@@ -174,3 +174,49 @@
             .hero h1{ font-size:36px; }
             .hero p.lead{ font-size:13px; }
         }
+/* Shared navbar and soul-icon styles (centralized) */
+.navbar {
+    min-height: 40px; /* Make navbar thinner */
+    padding-top: 0.1rem;
+    padding-bottom: 0.2rem;
+}
+.nav-link {
+    color: #888 !important; /* Gray text */
+    text-shadow: 2px 2px 0 #000; /* Black drop shadow */
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+.navbar-toggler {
+    border: none;
+    padding: 4px 8px;
+}
+.navbar-toggler:focus { box-shadow: none; }
+.hamburger-icon { display: flex; flex-direction: column; width: 24px; height: 18px; justify-content: space-between; }
+.hamburger-line { height: 3px; width: 100%; background-color: #888; border-radius: 2px; transition: all 0.3s ease; }
+.navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(1){ transform: rotate(45deg) translate(5px,5px); }
+.navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(2){ opacity: 0; }
+.navbar-toggler[aria-expanded="true"] .hamburger-line:nth-child(3){ transform: rotate(-45deg) translate(5px,-5px); }
+@media (max-width: 767.98px) {
+    .navbar-collapse { text-align: center; }
+    .navbar-nav { width: 100%; display: block; }
+    .navbar-nav .nav-item { display: block; width: 100%; }
+    .navbar-nav .nav-link { display: inline-block; width: auto; padding: .5rem 1rem; }
+}
+.nav-link.active { color: #fff !important; position: relative; }
+.soul-icon { width: 26px; height: 26px; margin-right: .5rem; vertical-align: middle; display: inline-block; border-radius: 4px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6)); }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
+.nav-link.active .soul-icon { animation: pulse 1s ease-in-out infinite; transform-origin: center; }
+.navbar-nav .nav-link:not(.active):hover::before { content: ""; display: inline-block; width: 26px; height: 26px; margin-right: .5rem; vertical-align: middle; background-image: url('../assets/img/smallheart_bigdreams.png'); background-size: contain; background-repeat: no-repeat; animation: pulse 1s ease-in-out infinite; }
+
+/* Footer styling: grey text with stretched bg-dotmatrix image */
+footer {
+    border-top: 8px solid #ffffff; /* white separator line */
+    background-color: #2f2f2f; /* base grey */
+    color: #000000; /* lighter grey text */
+    background-image: url('../assets/img/bg-dotmatrix.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%; /* stretch to fill */
+    padding: 1.5rem 0;
+}
+footer p, footer .container { color: #bdbdbd; }
