@@ -220,3 +220,48 @@ footer {
     padding: 1.5rem 0;
 }
 footer p, footer .container { color: #bdbdbd; }
+
+/* Social icons (pixel-style) */
+.social-links { display:flex; gap:12px; justify-content:center; align-items:center; margin-top:36px; }
+.social-btn { width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#222,#0f0f0f); border:3px solid rgba(255,255,255,0.06); border-radius:6px; box-shadow: 0 6px 0 rgba(0,0,0,0.6); transition: transform 180ms ease, filter 180ms ease; }
+.social-btn img { width:28px; height:28px; display:block; }
+.social-btn:hover { transform: translateY(-6px) scale(1.06); filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6)); }
+.social-btn:active { transform: translateY(-2px) scale(0.98); }
+/* platform color rules removed: icons use colored SVGs from Simple Icons CDN */
+
+/* Slight larger on wide screens */
+@media(min-width:992px){
+    .social-btn{ width:56px; height:56px; }
+    .social-btn img{ width:34px; height:34px; }
+}
+
+/* Mobile adjustments for social icons and spacing */
+@media (max-width: 767.98px) {
+    /* On mobile make the social buttons vertical and large for easy tapping */
+    .social-links {
+        margin-top: 20px; /* spacing from hero buttons */
+        gap: 14px;
+        padding: 0 0.5rem;
+        justify-content: center;
+        flex-direction: column; /* stack vertically */
+        align-items: center;
+        width: 100%;
+    }
+    .social-btn {
+        width: 64px; /* larger tap target */
+        height: 64px;
+        border-width: 3px;
+        box-shadow: 0 6px 0 rgba(0,0,0,0.6);
+        border-radius: 8px;
+    }
+    .social-btn img { width:36px; height:36px; }
+    .social-btn:hover { transform: translateY(-8px) scale(1.04); }
+
+    /* Slight adjustments for very small phones */
+    @media (max-width: 420px) {
+        .hero p.lead { font-size: 16px; }
+        .social-links { gap: 12px; }
+        .social-btn { width:56px; height:56px; }
+        .social-btn img { width:30px; height:30px; }
+    }
+}
