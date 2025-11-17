@@ -89,6 +89,11 @@
             filter:drop-shadow(0 8px 12px rgba(0,0,0,0.6));
         }
         .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 420px;
+            width: 80%;
+            height: auto;
             transform: scale(1.5);
         }
         /* simple CSS heart - pixel-friendly */
@@ -210,7 +215,7 @@
 
 /* Footer styling: grey text with stretched bg-dotmatrix image */
 footer {
-    border-top: 8px solid #ffffff; /* white separator line */
+    border-top: 1px solid #ffffff; /* white separator line */
     background-color: #2f2f2f; /* base grey */
     color: #000000; /* lighter grey text */
     background-image: url('../assets/img/bg-dotmatrix.png');
@@ -265,3 +270,63 @@ footer p, footer .container { color: #bdbdbd; }
         .social-btn img { width:30px; height:30px; }
     }
 }
+
+/* General mobile-friendly adjustments */
+@media (max-width: 767.98px) {
+    /* Reduce hero spacing for small screens */
+    .hero { padding: 3rem 1rem; }
+    .logo {
+        transform: none;
+        max-width: 260px;
+        width: 70%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .hero h1 { font-size: 22px; letter-spacing: 3px; }
+    .hero p.lead { font-size: 16px; line-height: 1.6; max-width: 100%; padding: 0 0.5rem; }
+
+    /* Panels stack and use full width */
+    .panel { padding: 0.75rem; border-width: 3px; margin-bottom: 1rem; }
+    .panel .title { font-size: 18px; }
+
+    /* Make pixel buttons stack and be tappable */
+    .btn-pixel { display:block; width:100%; box-sizing:border-box; font-size:18px; padding:0.6rem 0.75rem; }
+    .btn-pixel + .btn { margin-top: 8px; }
+
+    /* Navbar links smaller on mobile */
+    .navbar-nav .nav-link { font-size: 1.25rem !important; padding: 0.5rem 0.75rem; }
+
+    /* Footer spacing */
+    footer { padding: 1rem 0; }
+
+    /* Images inside panels and hero scale down */
+    img.img-fluid { max-width:100%; height:auto; }
+}
+
+/* --- Inline page styles consolidated below ---
+   Moved from individual HTML files to central stylesheet for consistency */
+
+/* Hover state for nav links (was inline on several pages) */
+.nav-link:hover { color: #ccc !important; }
+
+/* Downloads / About page notice styles (shared) */
+.downloads-notice { text-align: center; color: #fff; margin: 3rem 0; }
+.downloads-notice .lead-text { font-size: 2.25rem; font-weight: 800; margin-bottom: .5rem; }
+.downloads-notice .muted { color: #ccc; font-size: 1.05rem; }
+
+/* Shake animation used on download page */
+.shake { display: inline-block; color: #fff; }
+@keyframes shake {
+    0% { transform: translateX(0); }
+    15% { transform: translateX(-6px) rotate(-2deg); }
+    30% { transform: translateX(6px) rotate(2deg); }
+    45% { transform: translateX(-4px) rotate(-1deg); }
+    60% { transform: translateX(4px) rotate(1deg); }
+    75% { transform: translateX(-2px) rotate(-0.5deg); }
+    100% { transform: translateX(0); }
+}
+.shake-forever { animation: shake 1.2s ease-in-out infinite; }
+
+/* Small-heart hover before element background path normalized for css context */
+.navbar-nav .nav-link:not(.active):hover::before { background-image: url('../assets/img/smallheart_bigdreams.png'); }
